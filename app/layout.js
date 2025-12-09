@@ -1,4 +1,9 @@
+
+import Header from "@/layout/header/Header";
 import "./globals.css";
+import { Providers } from "./providers";
+// 컴포넌트 import (Next.js에서는 절대경로 alias 추천)
+
 
 export const metadata = {
   title: "Candy Market",
@@ -9,7 +14,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body>
-        {children}
+        <Providers>
+          <div className="layout">
+            <Header />
+            <main className="main container">
+              {children}
+            </main>
+            {/* <Footer />
+          <FloatingChatBot /> */}
+          </div>
+        </Providers>
       </body>
     </html>
   );
