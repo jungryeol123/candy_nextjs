@@ -3,16 +3,40 @@ import { persist } from "zustand/middleware";
 
 export const useCartStore = create(
   persist(
-    (set) => ({
+    (set, get) => ({
+      cartList: [],
       cartCount: 0,
+      totalPrice: 0,
+      totalDcPrice: 0,
+      shippingFee: 3000,
 
-      setCartCount: (count) => set({ cartCount: count }),
-      increase: () => set((state) => ({ cartCount: state.cartCount + 1 })),
-      decrease: () => set((state) => ({ cartCount: state.cartCount - 1 })),
-      reset: () => set({ cartCount: 0 }),
+      setCartList: (list) => {
+        set({ cartList: list });
+        get().calcTotals();
+      },
+
+      calcTotals: () => {
+        const list = get().cartList;
+
+        const total = list.reduce(
+          (acc, item) => acc + item.qty * item.product.price,
+          0
+        );
+
+        const dcTotal = list.reduce(
+          (acc, item) =>
+            acc + item.qty * (item.product.price * item.product.dc * 0.01),
+          0
+        );
+
+        set({
+          cartCount: list.length,
+          totalPrice: total,
+          totalDcPrice: dcTotal,
+          shippingFee: total >= 30000 ? 0 : 3000,
+        });
+      },
     }),
-    {
-      name: "cart-store",
-    }
+    { name: "cart-storage" }
   )
 );
