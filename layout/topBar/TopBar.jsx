@@ -14,7 +14,7 @@ export default function TopBar() {
 
   const handleLogout = async () => {
     try {
-      await api.post("/auth/logout");
+      await api.post("/auth/logout",{});
       localStorage.removeItem("loginInfo");
       logout(); // Zustand 상태 변경
       router.push("/");
@@ -23,6 +23,7 @@ export default function TopBar() {
     }
   };
 
+  
   const isAdmin = user?.role === "ADMIN";
 
   return (
