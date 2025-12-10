@@ -15,7 +15,7 @@ export default function TopBar() {
   const handleLogout = async () => {
     try {
       await api.post("/auth/logout",{});
-      localStorage.removeItem("loginInfo");
+      // localStorage.removeItem("");
       logout(); // Zustand 상태 변경
       router.push("/");
     } catch (err) {

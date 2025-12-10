@@ -2,7 +2,7 @@
 
 import { useSignupForm } from "@/features/signup/useSignupForm";
 import { SignupId } from "@/features/signup/components/SignupId";
-// import { SignupPassword } from "@/features/signup/components/SignupPassword";
+import { SignupPassword } from "@/features/signup/components/SignupPassword";
 // import { SignupName } from "@/features/signup/components/SignupName";
 // import { SignupEmail } from "@/features/signup/components/SignupEmail";
 // import { SignupPhone } from "@/features/signup/components/SignupPhone";
@@ -16,6 +16,14 @@ import { SignupId } from "@/features/signup/components/SignupId";
 import { useSignupAgree } from "@/features/signup/hooks/useSignupAgree";
 
 import "./Signup.scss";
+import { SignupName } from "@/features/signup/components/SignupName";
+import { SignupEmail } from "@/features/signup/components/SignupEmail";
+import { SignupPhone } from "@/features/signup/components/SignupPhone";
+import { SignupAddress } from "@/features/signup/components/SignupAddress";
+import { SignupGender } from "@/features/signup/components/SignupGender";
+import { SignupBirth } from "@/features/signup/components/SignupBirth";
+import { SignupPlus } from "@/features/signup/components/SignupPlus";
+import { SignupTerms } from "@/features/signup/components/SignupTerms";
 
 export default function SignupPage() {
   const {
@@ -54,7 +62,7 @@ export default function SignupPage() {
             handleIdCheck={handleIdCheck}
           />
 
-          {/* <SignupPassword
+          <SignupPassword
             form={form}
             refs={refs}
             handleChangeForm={handleChangeForm}
@@ -83,7 +91,7 @@ export default function SignupPage() {
             refs={refs}
             handleChangeForm={handleChangeForm}
             handleIdCheck={handleIdCheck}
-          />
+          /> 
 
           <SignupTerms
             agree={agree}
@@ -92,7 +100,7 @@ export default function SignupPage() {
             setHoveredId={setHoveredId}
             handleAgreeChange={handleAgreeChange}
             handleAllAgree={handleAllAgree}
-          /> */}
+          />
 
           <li>
             <button className="btn-submit" type="submit">
