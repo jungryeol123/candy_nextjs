@@ -17,18 +17,20 @@ import RecommendedSlider from "@/shared/ui/recommend/RecommendedSlider";
 import { SlideContainer } from "@/shared/ui/slider/SlideContainer";
 import { useHomeImages } from "./hooks/useHomeImages";
 import { useRecentCategory } from "@/features/category/hooks/useRecentCategory";
+import { RightAdBanner } from "@/shared/ui/advertise/RightAdBanner";
+import { useAdvertiseList } from "./hooks/useAdvertiseList";
+import { AdvertiseList } from "@/shared/ui/advertise/AdvertiseList";
 
 export default function Home() {
   const { images, index, setIndex } = useHomeImages();
-//   const { bannerAds, inlineAds } = useAdvertiseList();
+  const { bannerAds, inlineAds } = useAdvertiseList();
 
-//   useHomeInit();
   useRecentCategory();
 
 //   const { showPopup, handleClosePopup } = useHomePopup();
   return (
     <>
-      {/* <RightAdBanner ads={bannerAds} /> */}
+      <RightAdBanner ads={bannerAds} />
 
       {/* {showPopup && <Popup onClose={handleClosePopup} />} */}
 
@@ -36,7 +38,7 @@ export default function Home() {
 
       <RecommendedSlider     title="좋아할만한 브랜드 상품" limit={15} />
 
-      {/* <AdvertiseList ads={inlineAds} /> */}
+      <AdvertiseList ads={inlineAds} />
 
       <ProductList title="마감 임박! 원더특가 ~66%" keyword="time" limit={12} />
       <ProductList title="실시간 인기 랭킹" keyword="sale" limit={12} />
