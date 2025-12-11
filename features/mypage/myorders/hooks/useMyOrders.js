@@ -1,44 +1,35 @@
 "use client"
 // features/order/hooks/useMyOrders.js
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 import { parseJwt } from "features/auth/parseJwt";
 import { useOrdersStore } from "@/store/orderStore";
 import { useMyOrdersQuery } from "@/features/mypage/myorders/hooks/useMyOrdersQuery";
-// import { orderAPI } from "../api/orderAPI";
+import { orderAPI } from "../api/orderAPI";
+import { useRouter } from "next/navigation";
 
 export function useMyOrders(itemsPerPage = 4) {
-  const [userId, setUserId] = useState(null);
+  const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-  const {orders} = useOrdersStore();
   
-  const {ordersQuery} = useMyOrdersQuery(userId);
-
-  /** 로그인 ID 읽기 */
-  useEffect(() => {
-    const stored = localStorage.getItem("loginInfo");
-    if (stored) {
-      const { accessToken } = JSON.parse(stored);
-      const payload = parseJwt(accessToken);
-      setUserId(payload.id);
+  // 🔹 로그인 User ID를 초기값에서 바로 계산
+  const [userId] = useState(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("auth-storage");
+      if (stored) {
+        const { accessToken } = JSON.parse(stored).state;
+        const payload = parseJwt(accessToken);
+        return payload.id;
+      }
     }
-  }, []);
+    return null;
+  });
 
-  /** 주문 조회 */
-  // useEffect(() => {
-  //   if (!userId) return;
+  // 🔹 Zustand 상태
+  const {orders} = useOrdersStore();
 
-  //   const fetchOrders = async () => {
-  //     try {
-  //       const res = await orderAPI.getMyOrders(userId);
-  //       setOrders(res.data);
-  //     } catch (err) {
-  //       console.error("주문 조회 실패:", err);
-  //     }
-  //   };
-
-  //   fetchOrders();
-  // }, [userId]);
+  // 🔹 React Query (userId 준비될 때만 실행됨)
+  const {ordersQuery, deleteMutation} = useMyOrdersQuery(userId);
 
   /** 주문 삭제 */
   const deleteOrder = async (orderCode) => {
@@ -63,6 +54,10 @@ export function useMyOrders(itemsPerPage = 4) {
         text: "주문을 삭제할 수 없습니다.",
       });
     }
+    ordersQuery.refetch();
+    // console.log(userId, orderCode);
+    
+    // deleteMutation.mutate(userId, orderCode);
   };
 
   /** 페이지네이션 */
@@ -81,6 +76,10 @@ export function useMyOrders(itemsPerPage = 4) {
     setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
   };
 
+  const goProduct = (ppk) => {
+    router.push(`/products/${ppk}`);
+  }
+
   return {
     userId,
     orders,
@@ -90,5 +89,6 @@ export function useMyOrders(itemsPerPage = 4) {
     nextPage,
     prevPage,
     deleteOrder,
+    goProduct,
   };
 }
