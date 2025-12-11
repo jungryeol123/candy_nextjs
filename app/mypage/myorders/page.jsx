@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Swal from "sweetalert2";
 
@@ -19,6 +19,7 @@ export default function MyOrders() {
     nextPage,
     prevPage,
     deleteOrder,
+    goProduct,
   } = useMyOrders(4);
 
 //   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ export default function MyOrders() {
     // }
   };
 
-  if (!userId) return <p>로그인이 필요합니다.</p>;
+  // if (!userId) return <p>로그인이 필요합니다.</p>;
 
   return (
     <div className="mypage-container">
@@ -54,7 +55,7 @@ export default function MyOrders() {
           <OrderCard
             key={order.id}
             order={order}
-            // navigate={navigate}
+            goProduct={goProduct}
             handleAddCart={handleAddCart}
             onDelete={() => deleteOrder(order.orderCode)}
           />

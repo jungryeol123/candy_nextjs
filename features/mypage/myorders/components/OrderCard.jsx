@@ -1,6 +1,6 @@
 // pages/myPage/OrderCard.jsx
 
-export function OrderCard({ order, navigate, handleAddCart, onDelete }) {
+export function OrderCard({ order, goProduct, handleAddCart, onDelete }) {
   return (
     <div className="mypage-card">
       <div className="mypage-body">
@@ -34,7 +34,7 @@ export function OrderCard({ order, navigate, handleAddCart, onDelete }) {
               </div>
 
               <div className="mypage-btn">
-                <button onClick={() => navigate(`/products/${item.ppk}`)}>
+                <button onClick={() => goProduct(item.ppk)}>
                   상품 바로가기
                 </button>
 

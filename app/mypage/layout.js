@@ -2,7 +2,6 @@ import { parseJwt } from "features/auth/parseJwt";
 import './MyPage.css'
 import './AdminLayout.scss'
 import Link from "next/link";
-import { Children } from "react";
 
 export default function RootLayout({children}) {
 //   const [userId, setUserId] = useState(null);
@@ -25,7 +24,7 @@ export default function RootLayout({children}) {
                 <h2 className="admin-title">마이페이지 메뉴</h2>
 
                 <nav className="admin-nav">
-                    <Link href="/mypage/update">개인정보수정</Link>
+                    <Link href="/mypage/userdetail">개인정보수정</Link>
                     <Link href="/mypage/myorders">주문 내역</Link>
                     <Link href="/mypage/mycoupon">쿠폰함</Link>
                 
