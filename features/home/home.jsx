@@ -13,11 +13,13 @@ import React from "react";
 // import { useRecentCategory } from "features/home/hooks/useRecentCategory";
 // import { useHomePopup } from "features/home/hooks/useHomePopup";
 import ProductList from "@/shared/ui/productList/ProductList";
-import { useRecentCategory } from "../category/hooks/useRecentCategory";
 import RecommendedSlider from "@/shared/ui/recommend/RecommendedSlider";
+import { SlideContainer } from "@/shared/ui/slider/SlideContainer";
+import { useHomeImages } from "./hooks/useHomeImages";
+import { useRecentCategory } from "@/features/category/hooks/useRecentCategory";
 
 export default function Home() {
-//   const { images, index, setIndex } = useHomeImages();
+  const { images, index, setIndex } = useHomeImages();
 //   const { bannerAds, inlineAds } = useAdvertiseList();
 
 //   useHomeInit();
@@ -30,7 +32,7 @@ export default function Home() {
 
       {/* {showPopup && <Popup onClose={handleClosePopup} />} */}
 
-      {/* <SlideContainer images={images} index={index} setIndex={setIndex} /> */}
+      <SlideContainer images={images} index={index} setIndex={setIndex} />
 
       <RecommendedSlider     title="좋아할만한 브랜드 상품" limit={15} />
 

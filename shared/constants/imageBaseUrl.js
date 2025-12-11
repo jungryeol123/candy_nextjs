@@ -1,1 +1,1 @@
-export const IMAGE_BASE_URL = "/images"; 
+export const IMAGE_BASE_URL = "/data"; 
