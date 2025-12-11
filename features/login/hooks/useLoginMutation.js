@@ -7,10 +7,12 @@ import { useAuthStore } from "@/store/authStore";
 import { useCartStore } from "@/store/cartStore";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import { useOrdersStore } from "@/store/orderStore";
 
 export function useLoginMutation(from = "/") {
   const login = useAuthStore((s) => s.login);
   const setCartList = useCartStore((s) => s.setCartList);
+  const setOrders = useOrdersStore((s) => s.setOrders);
   const router = useRouter();
 
   return useMutation({
@@ -36,6 +38,14 @@ export function useLoginMutation(from = "/") {
           user: { id: payload.id },
         });
         setCartList(res.data);
+      } catch (err) {
+        console.error("장바구니 불러오기 실패", err);
+      }
+      
+      // 2️⃣ 로그인 후 주문 내역 로드
+      try {
+        const res = await api.get(`/orders/my/${payload.id}`);
+        setOrders(res.data);
       } catch (err) {
         console.error("장바구니 불러오기 실패", err);
       }
