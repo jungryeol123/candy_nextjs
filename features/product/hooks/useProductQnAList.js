@@ -1,3 +1,6 @@
+import { api } from "@/shared/lib/axios";
+import { useQuery } from "@tanstack/react-query";
+
 export function useProductQnAList() {
   return useQuery({
     queryKey: ["productQnAList"],

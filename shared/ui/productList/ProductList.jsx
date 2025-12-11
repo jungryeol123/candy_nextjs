@@ -28,26 +28,7 @@ function ProductList({ title = "오늘의 특가", limit = 20, keyword }) {
 
   const dragThreshold = 5;
 
-  // ========================================
-  // 🔹 데이터 로딩 / 에러 처리
-  // ========================================
-  if (isLoading)
-    return (
-      <section className="home-page">
-        <h2 className="section-title">{title}</h2>
-        <p>불러오는 중...</p>
-      </section>
-    );
-
-  if (isError)
-    return (
-      <section className="home-page">
-        <h2 className="section-title">{title}</h2>
-        <p>상품을 불러오지 못했습니다.</p>
-      </section>
-    );
-
-  // ========================================
+   // ========================================
   // 🔹 필터 처리
   // ========================================
   const productFilterList = useMemo(() => {
@@ -69,6 +50,27 @@ function ProductList({ title = "오늘의 특가", limit = 20, keyword }) {
         return productList.slice(0, limit);
     }
   }, [productList, keyword, limit]);
+
+  // ========================================
+  // 🔹 데이터 로딩 / 에러 처리
+  // ========================================
+  if (isLoading)
+    return (
+      <section className="home-page">
+        <h2 className="section-title">{title}</h2>
+        <p>불러오는 중...</p>
+      </section>
+    );
+
+  if (isError)
+    return (
+      <section className="home-page">
+        <h2 className="section-title">{title}</h2>
+        <p>상품을 불러오지 못했습니다.</p>
+      </section>
+    );
+
+ 
 
   // ========================================
   // 🔹 드래그 로직
