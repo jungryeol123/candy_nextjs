@@ -1,7 +1,9 @@
-export default function Home() {
-  return (
-    <div>
-      홈 페이지
-    </div>
-  );
+"use client";
+
+import Home from "@/features/home/home";
+
+
+
+export default function Page() {
+  return <Home />;
 }

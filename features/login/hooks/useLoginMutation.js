@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useMutation } from "@tanstack/react-query";
 import { api } from "@/shared/lib/axios";
@@ -9,9 +9,8 @@ import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 
 export function useLoginMutation(from = "/") {
-  const login = useAuthStore((state) => state.login);
-  const setCartList = useCartStore((state) => state.setCartList);
-
+  const login = useAuthStore((s) => s.login);
+  const setCartList = useCartStore((s) => s.setCartList);
   const router = useRouter();
 
   return useMutation({
@@ -24,34 +23,30 @@ export function useLoginMutation(from = "/") {
       const { accessToken, role } = data;
       const payload = parseJwt(accessToken);
 
-      // 1️⃣ Zustand authStore 업데이트 (로그인완료)
+      // 1️⃣ Zustand 로그인 저장
       login({
         accessToken,
         role,
         userId: payload.id,
       });
 
-      // 2️⃣ 장바구니 정보 요청
+      // 2️⃣ 로그인 후 장바구니 로드
       try {
-        const cartRes = await api.post("/cart/cartList", {
+        const res = await api.post("/cart/cartList", {
           user: { id: payload.id },
         });
-
-        // 3️⃣ Zustand cartStore 업데이트
-        setCartList(cartRes.data);
+        setCartList(res.data);
       } catch (err) {
-        console.error("장바구니 불러오기 실패:", err);
+        console.error("장바구니 불러오기 실패", err);
       }
 
-      // 4️⃣ 알림 + 이동
+      // 3️⃣ 알림 + 이동
       Swal.fire({
         icon: "success",
-        timer: 800,
         title: "로그인 성공!",
+        timer: 800,
         showConfirmButton: false,
-      }).then(() => {
-        router.push(from);
-      });
+      }).then(() => router.push(from));
     },
 
     onError: () => {
