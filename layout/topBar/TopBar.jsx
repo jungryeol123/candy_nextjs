@@ -10,7 +10,7 @@ import { useAuthStore } from "@/store/authStore";
 export default function TopBar() {
   const router = useRouter();
 
-  const { isLogin, user, logout } = useAuthStore();
+  const { isLogin, role, logout } = useAuthStore();
 
   const handleLogout = async () => {
     try {
@@ -24,8 +24,6 @@ export default function TopBar() {
   };
 
   
-  const isAdmin = user?.role === "ADMIN";
-
   return (
     <div className="top-bar">
       <div className="top-bar__left">
@@ -45,7 +43,7 @@ export default function TopBar() {
           {isLogin && <li onClick={handleLogout}>로그아웃</li>}
           {isLogin && <li><Link href="/mypage">마이페이지</Link></li>}
 
-          {isLogin && isAdmin && (
+          {isLogin && role == "ADMIN" && (
             <li><Link href="/admin">관리자페이지</Link></li>
           )}
         </ul>
