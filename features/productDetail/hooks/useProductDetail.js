@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Swal from "sweetalert2";
-
+import { useCartQuery } from "@/features/cart/useCartQuery";
 import { api } from "@/shared/lib/axios";
 import { parseJwt } from "@/features/auth/parseJwt";
 import { useAuthStore } from "@/store/authStore";
@@ -17,6 +17,8 @@ export function useProductDetail(id) {
   const userId = useAuthStore((state) => state.userId);
 
   const [count, setCount] = useState(1);
+  
+  const { cartQuery } = useCartQuery(userId);
 
   // -------------------------
   // 1) 상품 데이터 가져오기
@@ -104,6 +106,7 @@ export function useProductDetail(id) {
         text: "장바구니 등록에 실패했습니다.",
       });
     }
+    cartQuery.refetch();
   };
 
   // -------------------------
