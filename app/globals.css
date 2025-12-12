@@ -48,3 +48,46 @@ img {
   margin: 0 auto;
   width: 100%;
 }
+
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: #866bff;   /* 기본 버튼 색 */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(134, 107, 255, 0.25);
+  margin: 0 10px;
+
+  &:hover {
+    background: #7556ff; /* hover 색 (#866bff 보다 조금 진하게) */
+  }
+
+  &:active {
+    transform: scale(0.96);
+    background: #5a3de0; /* 눌렀을 때 색 */
+  }
+}
+
+
+
+input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #866bff; /* 포커스 보라색 */
+    box-shadow: 0 0 4px rgba(134, 107, 255, 0.4);
+  }
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
