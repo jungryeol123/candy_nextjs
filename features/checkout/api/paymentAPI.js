@@ -46,11 +46,11 @@ export const getNaverPayment = async (receiver, paymentInfo, cartList, couponId)
   const cidList = cartList.map((item) => item.cid);
   const qty = cartList.reduce((sum, item) => sum + parseInt(item.qty), 0);
   const productInfo = cartList.map((item) => ({pid: item.product.id, qty: item.qty}));
-  const stored = localStorage.getItem("loginInfo");
+  const stored = localStorage.getItem("auth-storage");
   let id = -1;
 
   if (stored) {
-    const { accessToken } = JSON.parse(stored);
+    const { accessToken } = JSON.parse(stored).state;
     const payload = parseJwt(accessToken);
     id = payload.id;
   } 
