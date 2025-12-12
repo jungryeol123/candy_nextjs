@@ -14,7 +14,7 @@ export function QnA({ id, product }) {
     isLoading,
     isError,
   } = useProductQnAList();
-  console.log("qnaAll", qnaAll);
+
   const router = useRouter();
   const pathname = usePathname();
 

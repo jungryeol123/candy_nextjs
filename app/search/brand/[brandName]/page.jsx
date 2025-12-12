@@ -1,3 +1,5 @@
+"use client";
+
 import "../../SearchResult.scss";
 import { useParams } from "next/navigation";
 import { useSearchResult } from "@/features/searchResult/hooks/useSearchResult";
@@ -7,16 +9,16 @@ import { SearchResultList } from "@/features/searchResult/components/SearchResul
 
 export default function SearchResult() {
     const params = useParams();
-    const keyword = params.keyword;
+    const brandName = decodeURIComponent(params.brandName);
 
     const { filterList, activeFilter, handleFilter } = useSearchResult({
-        mode: "search",
-        keyword
+        mode: "brand",
+        keyword: brandName
     });
 
-  return (
+    return (
     <div className="search-result-page">
-      <h2>키워드 검색 결과: "{keyword}"</h2>
+      <h2>브랜드 검색 결과: "{brandName}"</h2>
 
       <SearchFilterBar
         activeFilter={activeFilter}
@@ -25,5 +27,5 @@ export default function SearchResult() {
 
       <SearchResultList filterList={filterList} />
     </div>
-  );
+    );
 }

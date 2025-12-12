@@ -1,4 +1,5 @@
 import {FilterItem} from "@/shared/components/FilterItem";
+import "@/shared/components/filter.scss"
 
 export function SearchFilterBar({ activeFilter, handleFilter }) {
   const filterLabel = [

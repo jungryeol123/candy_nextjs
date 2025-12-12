@@ -8,7 +8,7 @@ export function MainCategory({ main }) {
 
     const goMain = () => {
       router.push(
-    `/category/${encodeURIComponent(main.name)}?`
+    `/search/category/${encodeURIComponent(main.name)}?`
             + new URLSearchParams({ type: "main", id: main.id }).toString()
       );
     };

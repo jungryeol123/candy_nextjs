@@ -10,8 +10,6 @@ export function useSearchResult({ mode, keyword, cateId }) {
     const [filterList, setFilterList] = useState([]);
     const [activeFilter, setActiveFilter] = useState("");
 
-    console.log("asdfsaf");
-
     // 검색 필터
     function searchFiltering(keyword) {
         return productList.filter((p) =>
