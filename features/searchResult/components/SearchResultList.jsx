@@ -1,5 +1,6 @@
 import ProductCard from "@/shared/productCard/ProductCart.jsx";
 import Link from "next/link";
+import "@/app/search/SearchResult.scss";
 
 export function SearchResultList({ filterList }) {
   if (!filterList || filterList.length === 0)

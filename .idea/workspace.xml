@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="aa465215-5c1f-496e-8ec0-3ad5c5cdfd5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/category/dsd copy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/category/dsd.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/category/hooks/useCategoryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/hooks/useCategoryList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/categoryNav/CategoryNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/layout/categoryNav/CategoryNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/components/dsd copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/products/[id]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/SearchResult.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/SearchResult.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/brand/[name]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/brand/[brandName]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/category/[categoryName]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/category/[categoryName]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/search/[keyword]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/keyword/[keyword]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/category/components/MainCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/components/MainCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/productDetail/components/qna/QnA.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/productDetail/components/qna/QnA.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/productDetail/components/review/components/ReviewList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/productDetail/components/review/components/ReviewList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/components/SearchFilterBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/components/SearchFilterBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/components/SearchResultList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/components/SearchResultList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/hooks/useSearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/hooks/useSearchResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/logoSearch/LogoSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/layout/logoSearch/LogoSearch.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,34 +53,35 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/LEESEUNGSOO",
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/dev/candy_nextjs/shared/constants",
+    "last_opened_file_path": "C:/dev/candy_nextjs/shared/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\dev\\WebStorm-2025.2.5.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "ts.external.directory.path": "C:\\dev\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\candy_nextjs\shared\components" />
       <recent name="C:\dev\candy_nextjs\shared\constants" />
       <recent name="C:\dev\candy_nextjs\app\searchResult\search" />
       <recent name="C:\dev\candy_nextjs\app\searchResult\category" />
       <recent name="C:\dev\candy_nextjs\app\searchResult\brand" />
-      <recent name="C:\dev\candy_nextjs\features\searchResult" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\candy_nextjs\app\searchResult\category" />
+      <recent name="C:\dev\candy_nextjs\app\searchResult" />
+      <recent name="C:\dev\candy_nextjs\app\category" />
+      <recent name="C:\dev\candy_nextjs\app" />
       <recent name="C:\dev\candy_nextjs\shared\components" />
-      <recent name="C:\dev\candy_nextjs\app\searchResult\search\[keyword]" />
-      <recent name="C:\dev\candy_nextjs\app\searchResult\category\[category]" />
-      <recent name="C:\dev\candy_nextjs\app\searchResult\brand\[keyword]" />
-      <recent name="C:\dev\candy_nextjs\features\category\components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -107,7 +116,8 @@
       <workItem from="1765415143200" duration="7341000" />
       <workItem from="1765427563867" duration="21000" />
       <workItem from="1765429262360" duration="4000" />
-      <workItem from="1765501959753" duration="10855000" />
+      <workItem from="1765501959753" duration="11645000" />
+      <workItem from="1765516510677" duration="2045000" />
     </task>
     <servers />
   </component>

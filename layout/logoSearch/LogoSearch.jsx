@@ -19,7 +19,7 @@ export default function LogoSearch() {
   // 검색 실행
   const handleSearch = () => {
     if (keyword.trim() !== "") {
-      router.push(`/search/${encodeURIComponent(keyword)}`);
+      router.push(`/search/keyword/${encodeURIComponent(keyword)}`);
     }
   };
 

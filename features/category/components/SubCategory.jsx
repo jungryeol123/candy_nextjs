@@ -7,7 +7,7 @@ export function SubCategory({ sub }) {
     const goSub = (e) => {
         e.stopPropagation();
         router.push(
-            `/category/${encodeURIComponent(sub.name)}?`
+            `/search/category/${encodeURIComponent(sub.name)}?`
             + new URLSearchParams({ type: "sub", id: sub.id }).toString()
         );
     };

@@ -1,5 +1,7 @@
+"use client";
+
 import "../../SearchResult.scss";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams} from "next/navigation";
 import { useSearchResult } from "@/features/searchResult/hooks/useSearchResult.js";
 import { SearchFilterBar } from "@/features/searchResult/components/SearchFilterBar.jsx";
 import { SearchResultList } from "@/features/searchResult/components/SearchResultList.jsx";
@@ -8,7 +10,7 @@ export default function SearchResult() {
     const params = useParams();
     const searchParams = useSearchParams();
 
-    const categoryName = params.categoryName;
+    const categoryName = decodeURIComponent(params.categoryName);
     const type = searchParams.get("type");  // "main" 또는 "sub"
     const cateId = Number(searchParams.get("id"));
 
