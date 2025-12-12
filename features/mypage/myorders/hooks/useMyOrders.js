@@ -46,10 +46,6 @@ export function useMyOrders(itemsPerPage = 4) {
           title: "삭제 완료",
           text: "주문이 삭제되었습니다.",
         });
-
-        setOrders((prev) =>
-          prev.filter((order) => order.orderCode !== orderCode)
-        );
       }
     } catch (err) {
       Swal.fire({
@@ -86,8 +82,6 @@ export function useMyOrders(itemsPerPage = 4) {
   
   /** 장바구니 추가 */
   const handleAddCart = async (item) => {
-    // const isNew = await dispatch(addCart(item.ppk, 1));
-
     const cart = {
       qty: 1,
       product: { id: item.ppk },
@@ -96,7 +90,7 @@ export function useMyOrders(itemsPerPage = 4) {
     
     const res = await api.post("/cart/add", cart);
     const isNew = (res.data.qty === 1 ? true : false);
-    
+
     if (isNew) {
       Swal.fire({
         icon: "success",
