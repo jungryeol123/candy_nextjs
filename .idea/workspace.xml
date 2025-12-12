@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa465215-5c1f-496e-8ec0-3ad5c5cdfd5b" name="Changes" comment="" />
+    <list default="true" id="aa465215-5c1f-496e-8ec0-3ad5c5cdfd5b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/products/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/products/[id]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/SearchResult.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/SearchResult.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/brand/[name]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/brand/[brandName]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/category/[categoryName]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/category/[categoryName]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/searchResult/search/[keyword]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/keyword/[keyword]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/category/components/MainCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/components/MainCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/productDetail/components/qna/QnA.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/productDetail/components/qna/QnA.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/productDetail/components/review/components/ReviewList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/productDetail/components/review/components/ReviewList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/components/SearchFilterBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/components/SearchFilterBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/components/SearchResultList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/components/SearchResultList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/searchResult/hooks/useSearchResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/features/searchResult/hooks/useSearchResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/logoSearch/LogoSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/layout/logoSearch/LogoSearch.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,27 +41,49 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="36g4wGonwhZzJRnjU7tt6ljBW8J" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\WebStorm-2025.2.5.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "feature/LEESEUNGSOO",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "C:/dev/candy_nextjs/shared/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "ts.external.directory.path": "C:\\dev\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\candy_nextjs\shared\components" />
+      <recent name="C:\dev\candy_nextjs\shared\constants" />
+      <recent name="C:\dev\candy_nextjs\app\searchResult\search" />
+      <recent name="C:\dev\candy_nextjs\app\searchResult\category" />
+      <recent name="C:\dev\candy_nextjs\app\searchResult\brand" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\candy_nextjs\app\searchResult\category" />
+      <recent name="C:\dev\candy_nextjs\app\searchResult" />
+      <recent name="C:\dev\candy_nextjs\app\category" />
+      <recent name="C:\dev\candy_nextjs\app" />
+      <recent name="C:\dev\candy_nextjs\shared\components" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -79,6 +116,8 @@
       <workItem from="1765415143200" duration="7341000" />
       <workItem from="1765427563867" duration="21000" />
       <workItem from="1765429262360" duration="4000" />
+      <workItem from="1765501959753" duration="11645000" />
+      <workItem from="1765516510677" duration="2045000" />
     </task>
     <servers />
   </component>

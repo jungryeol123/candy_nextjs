@@ -23,7 +23,6 @@ export function ReviewList({ id }) {
     return productReviewList.filter((review) => review.ppk === Number(id));
   }, [productReviewList, id]);
 
-  console.log("productReviews", productReviews);
   const reviewImages = useMemo(() => {
     return productReviews.flatMap((r) => r.images || []).slice(0, 6);
   }, [productReviews]);

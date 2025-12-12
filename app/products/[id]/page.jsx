@@ -13,9 +13,6 @@ import { IMAGE_BASE_URL } from "@/shared/constants/imageBaseUrl";
 import { QnA } from "@/features/productDetail/components/qna/QnA";
 import { Return } from "@/features/productDetail/components/return/Return";
 
-
-
-
 export default function ProductDetail() {
   const params = useParams();
   const id = params.id;
@@ -36,7 +33,7 @@ export default function ProductDetail() {
     handleTabClick,
     isLoading,
   } = useProductDetail(id);
-  console.log("Product", product);
+
   if (isLoading) return <p>상품 정보를 불러오는 중...</p>;
   if (!product) return <p>상품 정보를 찾을 수 없습니다.</p>;
 
@@ -73,7 +70,7 @@ export default function ProductDetail() {
               <div className="product-info-left">
                 {product.productName} ㅣ{" "}
                 <Link
-                  href={`/brand/${encodeURIComponent(product.brandName)}`}
+                  href={`/search/brand/${encodeURIComponent(product.brandName)}`}
                   className="product-brand"
                 >
                   {product.brandName}
