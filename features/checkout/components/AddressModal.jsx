@@ -72,7 +72,7 @@ export default function AddressModal({ onClose, onSelectAddress }) {
 
                     {/* 주문 리스트 */}
                     {orders.length > 0 &&
-                        currentItems.map((order) => (
+                        currentItems?.map((order) => (
                             <ul className="address-modal-group" key={order.orderId}>
                                 <li className="address-modal-name">
                                     <div>{order.receiverName}</div>
