@@ -57,7 +57,8 @@ export const useCartStore = create((set, get) => ({
 
   // 가격 계산
   calcTotals: () => {
-    const list = get().cartList;
+    const totalList = get().cartList; //매진 포함
+    const list = totalList.filter(item => item.product.count > 0); //매진 제외
 
     const total = list.reduce(
       (acc, item) => acc + item.qty * item.product.price,
@@ -71,7 +72,7 @@ export const useCartStore = create((set, get) => ({
     );
 
     set({
-      cartCount: list.length,
+      cartCount: totalList.length,
       totalPrice: total,
       totalDcPrice: dcTotal,
       shippingFee: total >= 30000 ? 0 : 3000,

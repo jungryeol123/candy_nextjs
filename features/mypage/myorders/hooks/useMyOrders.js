@@ -2,9 +2,11 @@
 // features/order/hooks/useMyOrders.js
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { parseJwt } from "features/auth/parseJwt";
+import { parseJwt } from "@/features/auth/parseJwt";
+import { api } from "@/shared/lib/axios";
 import { useOrdersStore } from "@/store/orderStore";
 import { useMyOrdersQuery } from "@/features/mypage/myorders/hooks/useMyOrdersQuery";
+import { useCartQuery } from "@/features/cart/useCartQuery";
 import { orderAPI } from "../api/orderAPI";
 import { useRouter } from "next/navigation";
 
@@ -30,6 +32,8 @@ export function useMyOrders(itemsPerPage = 4) {
 
   // 🔹 React Query (userId 준비될 때만 실행됨)
   const {ordersQuery, deleteMutation} = useMyOrdersQuery(userId);
+  const { cartQuery } = useCartQuery(userId);
+  
 
   /** 주문 삭제 */
   const deleteOrder = async (orderCode) => {
@@ -79,6 +83,35 @@ export function useMyOrders(itemsPerPage = 4) {
   const goProduct = (ppk) => {
     router.push(`/products/${ppk}`);
   }
+  
+  /** 장바구니 추가 */
+  const handleAddCart = async (item) => {
+    // const isNew = await dispatch(addCart(item.ppk, 1));
+
+    const cart = {
+      qty: 1,
+      product: { id: item.ppk },
+      user: { id: userId },
+    };
+    
+    const res = await api.post("/cart/add", cart);
+    const isNew = (res.data.qty === 1 ? true : false);
+    
+    if (isNew) {
+      Swal.fire({
+        icon: "success",
+        title: "장바구니 등록",
+        text: `${item.productName}이 장바구니에 추가되었습니다.`,
+      });
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "수량 증가",
+        text: `${item.productName} 수량이 증가했습니다.`,
+      });
+    }
+    cartQuery.refetch();
+  };
 
   return {
     userId,
@@ -90,5 +123,6 @@ export function useMyOrders(itemsPerPage = 4) {
     prevPage,
     deleteOrder,
     goProduct,
+    handleAddCart,
   };
 }
