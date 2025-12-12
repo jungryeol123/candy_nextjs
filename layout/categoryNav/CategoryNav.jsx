@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
-// import { CategoryMenu } from "@/features/category/components/CategoryMenu";
 import "./CategoryNav.scss";
+import { CategoryMenu } from "@/features/category/components/CategoryMenu.jsx";
 
 export default function CategoryNav() {
   return (
@@ -14,7 +14,7 @@ export default function CategoryNav() {
         <li className="category-first">
           <FiMenu />
           <span>카테고리</span>
-          {/* <CategoryMenu /> */}
+          <CategoryMenu />
         </li>
 
         {/* 상단 네비 메뉴 */}
