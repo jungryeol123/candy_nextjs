@@ -12,9 +12,9 @@ export function useCart() {
   // 🔹 로그인 User ID를 초기값에서 바로 계산
   const [userId] = useState(() => {
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("loginInfo");
+      const stored = localStorage.getItem("auth-storage");
       if (stored) {
-        const { accessToken } = JSON.parse(stored);
+        const { accessToken } = JSON.parse(stored).state;
         const payload = parseJwt(accessToken);
         return payload.id;
       }

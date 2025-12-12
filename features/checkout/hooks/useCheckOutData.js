@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 import Swal from "sweetalert2";
 
-import { parseJwt } from "features/auth/parseJwt";
-// import { getKakaoPayment, getNaverPayment } from "features/order/paymentAPI";
-import { api } from "shared/lib/axios.js";
+import { parseJwt } from "@/features/auth/parseJwt";
+import { getKakaoPayment, getNaverPayment } from "@/features/checkout/api/paymentAPI";
+import { api } from "@/shared/lib/axios.js";
 import {useCartStore} from "@/store/cartStore";
 
 export default function useCheckOutData() {
@@ -46,14 +46,14 @@ export default function useCheckOutData() {
     // -----------------------------
     // 로그인 정보 세팅 + 장바구니 요청
     // -----------------------------
-    // useEffect(() => {
-    //     const stored = localStorage.getItem("loginInfo");
-    //     if (stored) {
-    //         const { accessToken } = JSON.parse(stored);
-    //         const payload = parseJwt(accessToken);
-    //         setUserId(payload.id);
-    //     }
-    // }, []);
+    useEffect(() => {
+        const stored = localStorage.getItem("auth-storage");
+        if (stored) {
+            const { accessToken } = JSON.parse(stored).state;
+            const payload = parseJwt(accessToken);
+            setUserId(payload.id);
+        }
+    }, []);
 
     // -----------------------------
     // cartList 준비되면 receiver 초기화
