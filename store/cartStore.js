@@ -19,13 +19,13 @@
 //         const list = get().cartList;
 
 //         const total = list.reduce(
-//           (acc, item) => acc + item.qty * item.product.price,
+//           (acc, item) => acc + item.qty * item.products.price,
 //           0
 //         );
 
 //         const dcTotal = list.reduce(
 //           (acc, item) =>
-//             acc + item.qty * (item.product.price * item.product.dc * 0.01),
+//             acc + item.qty * (item.products.price * item.products.dc * 0.01),
 //           0
 //         );
 
