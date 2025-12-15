@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aa465215-5c1f-496e-8ec0-3ad5c5cdfd5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/cartStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/cartStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/features/category/components/SubCategory.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "C:/dev/candy_nextjs/features/delivery",
+    "last_opened_file_path": "C:/dev/candy_nextjs/features/administration/product/add",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,18 +58,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\dev\candy_nextjs\features\delivery" />
-      <recent name="C:\dev\candy_nextjs\features\administration\products\edit\components" />
-      <recent name="C:\dev\candy_nextjs\features\administration\products\edit\components\update" />
-      <recent name="C:\dev\candy_nextjs\features\administration\products\edit\components\add" />
-      <recent name="C:\dev\candy_nextjs\app\admin\products\edit\add" />
+      <recent name="C:\dev\candy_nextjs\features\administration\product\add" />
+      <recent name="C:\dev\candy_nextjs\app\admin\analytics\products\edit\update" />
+      <recent name="C:\dev\candy_nextjs\app\admin\analytics\products\add" />
+      <recent name="C:\dev\candy_nextjs\shared\components" />
+      <recent name="C:\dev\candy_nextjs\shared\constants" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\dev\candy_nextjs\features\administration\products\edit" />
       <recent name="C:\dev\candy_nextjs\app\searchResult\category" />
       <recent name="C:\dev\candy_nextjs\app\searchResult" />
       <recent name="C:\dev\candy_nextjs\app\category" />
       <recent name="C:\dev\candy_nextjs\app" />
+      <recent name="C:\dev\candy_nextjs\shared\components" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -106,8 +105,7 @@
       <workItem from="1765427563867" duration="21000" />
       <workItem from="1765429262360" duration="4000" />
       <workItem from="1765501959753" duration="11645000" />
-      <workItem from="1765516510677" duration="2045000" />
-      <workItem from="1765760346431" duration="13340000" />
+      <workItem from="1765516510677" duration="3791000" />
     </task>
     <servers />
   </component>

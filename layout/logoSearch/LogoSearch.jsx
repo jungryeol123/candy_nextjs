@@ -14,7 +14,7 @@ export default function LogoSearch() {
   const [keyword, setKeyword] = useState("");
 
   // 장바구니 카운트 (Zustand)
-  const cartCount = useCartStore((state) => state.cartCount);
+    const cartCount = useCartStore((state) => state.cartCount);
 
   // 검색 실행
   const handleSearch = () => {

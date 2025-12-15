@@ -120,11 +120,13 @@ export function QnA({ id, product }) {
           </tr>
         </thead>
 
-        {currentItems.length === 0 ? (
-          <div className="no-qna">이 상품에 대한 문의글이 없습니다.</div>
-        ) : (
-          <tbody>
-            {currentItems.map((item, idx) => (
+        <tbody>
+          {currentItems.length === 0 ? (
+            <tr className="no-qna">
+              <td colSpan={4}>이 상품에 대한 문의글이 없습니다.</td>
+            </tr>
+          ) : (
+            currentItems.map((item, idx) => (
               <tr key={idx}>
                 <td>
                   {item.is_private ? (
@@ -137,17 +139,13 @@ export function QnA({ id, product }) {
                 </td>
                 <td>{item.writer}</td>
                 <td>{new Date(item.date).toLocaleDateString("ko-KR")}</td>
-                <td
-                  className={`status ${
-                    item.status === "답변대기" ? "wait" : ""
-                  }`}
-                >
+                <td className={`status ${item.status === "답변대기" ? "wait" : ""}`}>
                   {item.status}
                 </td>
               </tr>
-            ))}
-          </tbody>
-        )}
+            ))
+          )}
+        </tbody>
       </table>
 
       {/* 페이지네이션 */}

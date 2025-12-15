@@ -4,21 +4,21 @@
   padding: 20px;
 }
 
-.section-title {
+.user-detail-container .section-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 14px;
   color: #222;
 }
 
-.user-card {
+.user-detail-container .user-card {
   border: 1px solid #ccecd1;
   padding: 20px;
   border-radius: 8px;
   background: #fafffa;
 }
 
-.user-item {
+.user-detail-container .user-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,28 +26,30 @@
   border-bottom: 1px solid #eee;
 }
 
-.user-item:last-child {
+.user-detail-container .user-item:last-child {
   border-bottom: none;
 }
 
-.user-label {
+.user-detail-container .user-label {
   font-size: 14px;
   color: #777;
 }
 
-.user-value {
+.user-detail-container .user-value {
   font-size: 16px;
   font-weight: 500;
   margin-top: 4px;
 }
 
-.edit-btn {
+.user-detail-container .edit-btn {
+  color: #222;
   background: #f2f2f2;
   border: 1px solid #ccc;
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .edit-btn:hover {
