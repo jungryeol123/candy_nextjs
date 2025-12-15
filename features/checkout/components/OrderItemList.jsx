@@ -7,7 +7,7 @@ export default function OrderItemList({ reduceCartList }) {
                     {reduceCartList.map((item) =>
                         <div key={item.cid} className="value order-item">
                             <img
-                                src={`/images/productImages/${item.product.imageUrl}`}
+                                src={`/data/productImages/${item.product.imageUrl}`}
                                 alt="product"
                                 className="order-thumb"
                             />
