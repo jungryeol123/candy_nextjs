@@ -32,8 +32,8 @@ export default function AdminLayout({ children }) {
           <Link href="/admin/analytics/conversion">📊 전환율 분석</Link>
           <Link href="/admin/analytics/price">상품 가격 분석</Link>
           <Link href="/admin/products/reviewList">리뷰 분석</Link>
-          <Link href="/admin/products/add">상품 등록</Link>
-          <Link href="/admin/adminProductList">상품 편집</Link>
+          <Link href="/admin/products/edit/add">상품 등록</Link>
+          <Link href="/admin/products/edit">상품 편집</Link>
         </nav>
       </aside>
 
