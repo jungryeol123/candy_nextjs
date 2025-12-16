@@ -184,6 +184,7 @@
 
 import { CouponButtons } from "features/coupon/components/CouponButtons";
 import { useCoupon } from "features/coupon/hooks/useCoupon";
+import { IMAGE_BASE_URL } from "@/shared/constants/imageBaseUrl";
 
 export default function CouponPage() {
   const { userId, couponList, issuedCoupons, issueCoupon } = useCoupon();
@@ -194,7 +195,7 @@ export default function CouponPage() {
       <div
         style={{
           height: "100vh",
-          backgroundImage: "url('/images/popupimage/coupon_image3.png')",
+          backgroundImage: `url("${IMAGE_BASE_URL}/popupimage/coupon_image3.png")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
