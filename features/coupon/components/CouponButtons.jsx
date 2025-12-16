@@ -15,6 +15,7 @@ export function CouponButtons({ userId, couponList, issuedCoupons, onIssue }) {
                 style={{
                   padding: "12px 25px",
                   fontSize: "18px",
+                  
                   borderRadius: "8px",
                   cursor: already ? "not-allowed" : "pointer",
                   width: "200px",

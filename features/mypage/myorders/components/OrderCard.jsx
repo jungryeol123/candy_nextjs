@@ -20,7 +20,7 @@ export function OrderCard({ order, goProduct, handleAddCart, onDelete }) {
               <div className="mypage-product-img-container">
                 <img
                   className="mypage-product-img"
-                  src={`/images/productImages/${item.product.imageUrl}`}
+                  src={`/data/productImages/${item.product.imageUrl}`}
                   alt="product"
                 />
                 {item.product.count <= 0 && (
