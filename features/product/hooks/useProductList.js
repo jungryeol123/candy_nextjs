@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/shared/lib/axios";
 
-export function useProductList() {
+export function useProductList(options = {}) {
   return useQuery({
     queryKey: ["productList"],
     queryFn: async () => {
@@ -11,5 +11,6 @@ export function useProductList() {
       return res.data;
     },
     staleTime: 1000 * 60 * 5,
+    ...options,
   });
 }

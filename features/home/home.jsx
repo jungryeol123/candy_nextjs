@@ -1,35 +1,28 @@
+
 "use client";
 
 import React from "react";
-// import { RightAdBanner } from "shared/ui/advertise/RightAdvBanner";
-// import Popup from "shared/ui/popup/Popup";
-// import { SlideContainer } from "shared/ui/slider/SlideContainer";
-// import RecommendedSlider from "shared/ui/recommend/RecommendedSlider";
-// import { AdvertiseList } from "shared/ui/advertise/AdvertiseList";
-
-// import { useHomeImages } from "features/home/hooks/useHomeImages";
-// import { useAdvertiseList } from "features/home/hooks/useAdvertiseList";
-// import { useHomeInit } from "features/home/hooks/useHomeInit";
-// import { useRecentCategory } from "features/home/hooks/useRecentCategory";
-// import { useHomePopup } from "features/home/hooks/useHomePopup";
-import ProductList from "@/shared/ui/productList/ProductList";
 import RecommendedSlider from "@/shared/ui/recommend/RecommendedSlider";
 import { SlideContainer } from "@/shared/ui/slider/SlideContainer";
-import { useHomeImages } from "./hooks/useHomeImages";
 import { useRecentCategory } from "@/features/category/hooks/useRecentCategory";
 import { RightAdBanner } from "@/shared/ui/advertise/RightAdBanner";
-import { useAdvertiseList } from "./hooks/useAdvertiseList";
 import { AdvertiseList } from "@/shared/ui/advertise/AdvertiseList";
 import { useHomePopup } from "./hooks/useHomePopup";
 import Popup from "@/shared/ui/popup/Popup";
+import { useAutoSlider } from "@/shared/hooks/useAutoSlider";
 
-export default function Home() {
-  const { images, index, setIndex } = useHomeImages();
-  const { bannerAds, inlineAds } = useAdvertiseList();
+
+export default function Home({
+  bannerAds,
+  inlineAds,
+  images,
+  children, // ✅ 추가
+}) {
+  const { index, setIndex } = useAutoSlider(images.length, 5000);
 
   useRecentCategory();
-
   const { showPopup, handleClosePopup } = useHomePopup();
+
   return (
     <>
       <RightAdBanner ads={bannerAds} />
@@ -38,13 +31,12 @@ export default function Home() {
 
       <SlideContainer images={images} index={index} setIndex={setIndex} />
 
-      <RecommendedSlider     title="좋아할만한 브랜드 상품" limit={15} />
+      <RecommendedSlider title="좋아할만한 브랜드 상품" limit={15} />
 
       <AdvertiseList ads={inlineAds} />
 
-      <ProductList title="마감 임박! 원더특가 ~66%" keyword="time" limit={12} />
-      <ProductList title="실시간 인기 랭킹" keyword="sale" limit={12} />
-      <ProductList title="할인을 잡아라!!" keyword="sale" limit={12} />
+      {/* 🔽 여기! 서버에서 내려온 컴포넌트 자리 */}
+      {children}
     </>
   );
 }
