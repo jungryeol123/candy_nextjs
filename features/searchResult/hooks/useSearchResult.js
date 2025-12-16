@@ -75,21 +75,21 @@ export function useSearchResult({ mode, keyword, cateId }) {
 
     // 🔍 필터 UI 클릭 처리
     const handleFilter = (type) => {
-    let filtered = [];
+        let filtered = [];
 
-    setActiveFilter(type);
+        setActiveFilter(type);
 
-    if (type === "new") {
-      filtered = [...filterList].sort(
-        (a, b) => new Date(b.productDate) - new Date(a.productDate)
-      );
-    } else if (type === "priceHigh") {
-      filtered = [...filterList].sort((a, b) => b.price - a.price);
-    } else if (type === "priceLow") {
-      filtered = [...filterList].sort((a, b) => a.price - b.price);
-    }
+        if (type === "new") {
+          filtered = [...filterList].sort(
+            (a, b) => new Date(b.productDate) - new Date(a.productDate)
+          );
+        } else if (type === "priceHigh") {
+          filtered = [...filterList].sort((a, b) => b.price - a.price);
+        } else if (type === "priceLow") {
+          filtered = [...filterList].sort((a, b) => a.price - b.price);
+        }
 
-    setFilterList(filtered);
+        setFilterList(filtered);
     };
 
     return { filterList, activeFilter, handleFilter };
