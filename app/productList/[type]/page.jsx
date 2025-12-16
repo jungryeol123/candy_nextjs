@@ -21,7 +21,7 @@ export default function HeaderProductList() {
     filteredProducts,
     loading,
     activeFilter,
-    handleFilter,
+    setActiveFilter,
   } = useHeaderProductList(type);
 
   const filterLabel = [
@@ -52,7 +52,7 @@ export default function HeaderProductList() {
             label={item.label}
             value={item.value}
             activeFilter={activeFilter}
-            onClick={handleFilter}
+            onClick={setActiveFilter}
           />
         ))}
       </ul>

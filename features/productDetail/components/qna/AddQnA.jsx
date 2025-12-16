@@ -43,7 +43,7 @@ export default function AddQnA({ onAddQnA, onClose, product , userId }) {
 
         <div className="product-area">
           <img
-            src={`/images/productImages/${product.imageUrl}`}
+            src={`/data/productImages/${product.imageUrl}`}
             alt={product.imageUrl_name}
             className="product-img"
           />
