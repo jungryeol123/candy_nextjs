@@ -24,7 +24,7 @@ export function QnA({ id, product }) {
   const itemsPerPage = 5;
 
   // 로그인 여부 (Next.js에서는 Zustand 또는 cookie 기반이라 가정)
-  const isLogin = false; // 👉 필요 시 Zustand store 또는 cookie에서 가져오면 됨
+  const isLogin = true; // 👉 필요 시 Zustand store 또는 cookie에서 가져오면 됨
   // 🔹 2) 해당 상품의 QnA만 필터링
   const qnaList = useMemo(() => {
     return qnaAll
