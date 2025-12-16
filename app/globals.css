@@ -60,7 +60,6 @@ button {
   background: #866bff;   /* 기본 버튼 색 */
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px rgba(134, 107, 255, 0.25);
-  margin: 0 10px;
 
   &:hover {
     background: #7556ff; /* hover 색 (#866bff 보다 조금 진하게) */
