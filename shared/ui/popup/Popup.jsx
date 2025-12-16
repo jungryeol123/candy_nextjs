@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import "./Popup.css";
+import { IMAGE_BASE_URL } from "@/shared/constants/imageBaseUrl";
 
 export default function Popup({ onClose }) {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function Popup({ onClose }) {
     <div className="popup-container">
       <div className="popup-content">
         <img
-          src="/images/popupimage/coupon_image1.png"
+          src={`${ IMAGE_BASE_URL}/popupimage/coupon_image1.png`}
           alt="쿠폰"
           className="popup-image"
         />
