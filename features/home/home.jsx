@@ -20,6 +20,8 @@ import { useRecentCategory } from "@/features/category/hooks/useRecentCategory";
 import { RightAdBanner } from "@/shared/ui/advertise/RightAdBanner";
 import { useAdvertiseList } from "./hooks/useAdvertiseList";
 import { AdvertiseList } from "@/shared/ui/advertise/AdvertiseList";
+import { useHomePopup } from "./hooks/useHomePopup";
+import Popup from "@/shared/ui/popup/Popup";
 
 export default function Home() {
   const { images, index, setIndex } = useHomeImages();
@@ -27,12 +29,12 @@ export default function Home() {
 
   useRecentCategory();
 
-//   const { showPopup, handleClosePopup } = useHomePopup();
+  const { showPopup, handleClosePopup } = useHomePopup();
   return (
     <>
       <RightAdBanner ads={bannerAds} />
 
-      {/* {showPopup && <Popup onClose={handleClosePopup} />} */}
+      {showPopup && <Popup onClose={handleClosePopup} />}
 
       <SlideContainer images={images} index={index} setIndex={setIndex} />
 
