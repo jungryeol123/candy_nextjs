@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import React, { useState } from "react";
 import "./AddQnA.css";
 
-export default function AddQnA({ onAddQnA, onClose, product }) {
+export default function AddQnA({ onAddQnA, onClose, product , userId }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isPrivate, setIsPrivate] = useState(false);
@@ -15,6 +15,7 @@ export default function AddQnA({ onAddQnA, onClose, product }) {
       title,
       content,
       isPrivate,
+      upk: userId
     };
 
     if (!title.trim()) {

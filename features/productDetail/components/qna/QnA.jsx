@@ -26,7 +26,7 @@ export function QnA({ id, product }) {
   const itemsPerPage = 5;
 
   // 로그인 여부 (Next.js에서는 Zustand 또는 cookie 기반이라 가정)
-  const { isLogin } = useAuthStore(); // 👉 필요 시 Zustand store 또는 cookie에서 가져오면 됨
+  const { isLogin, userId } = useAuthStore(); // 👉 필요 시 Zustand store 또는 cookie에서 가져오면 됨
   // 🔹 2) 해당 상품의 QnA만 필터링
   const qnaList = useMemo(() => {
     return qnaAll
@@ -70,8 +70,9 @@ export function QnA({ id, product }) {
 
   // 🔹 5) 문의 등록
   const handleAddQnA = async (qnaData) => {
+    console.log("qnaData",qnaData);
     try {
-      await api.post("/product/addProductQnA", qnaData);
+      await api.post("/product/addQnA", qnaData);
 
       Swal.fire({
         icon: "success",
@@ -101,6 +102,7 @@ export function QnA({ id, product }) {
             onAddQnA={handleAddQnA}
             onClose={() => setIsClickQnA(false)}
             product={product}
+            userId = {userId}
           />
         )}
       </div>
