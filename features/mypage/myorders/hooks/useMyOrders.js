@@ -9,6 +9,8 @@ import { useMyOrdersQuery } from "@/features/mypage/myorders/hooks/useMyOrdersQu
 import { useCartQuery } from "@/features/cart/useCartQuery";
 import { orderAPI } from "../api/orderAPI";
 import { useRouter } from "next/navigation";
+import { useCartStore } from "@/store/cartStore";
+import { useProductList } from "@/features/product/hooks/useProductList";
 
 export function useMyOrders(itemsPerPage = 4) {
   const router = useRouter();
@@ -29,6 +31,8 @@ export function useMyOrders(itemsPerPage = 4) {
 
   // 🔹 Zustand 상태
   const {orders} = useOrdersStore();
+  const {cartList} = useCartStore();
+  const productList = useProductList();
 
   // 🔹 React Query (userId 준비될 때만 실행됨)
   const {ordersQuery, deleteMutation} = useMyOrdersQuery(userId);
@@ -82,6 +86,17 @@ export function useMyOrders(itemsPerPage = 4) {
   
   /** 장바구니 추가 */
   const handleAddCart = async (item) => {
+    const cartItem = cartList?.filter(cItem => cItem.product.id === item.ppk);
+    const product = productList?.data.filter(pItem => pItem.id === item.ppk);
+    if(product[0]?.count <= cartItem[0]?.qty) {
+      Swal.fire({
+      icon: "error",
+      title: "장바구니 등록 실패",
+      text: "선택하신 수량이 재고를 초과했습니다."
+      });
+      return;
+    }
+    
     const cart = {
       qty: 1,
       product: { id: item.ppk },

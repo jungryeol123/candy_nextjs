@@ -11,10 +11,10 @@ export function useRecentCategory() {
   return useQuery({
     queryKey: ["recentSubCategory"],
     queryFn: async () => {
-      const stored = localStorage.getItem("loginInfo");
+      const stored = localStorage.getItem("auth-storage");
       if (!stored) return null;
 
-      const { accessToken } = JSON.parse(stored);
+      const { accessToken } = JSON.parse(stored).state;
       const payload = parseJwt(accessToken);
 
       const res = await api.get(`/view/recent-subcat/${payload.id}`);

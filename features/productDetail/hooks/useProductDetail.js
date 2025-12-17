@@ -8,6 +8,7 @@ import { api } from "@/shared/lib/axios";
 import { parseJwt } from "@/features/auth/parseJwt";
 import { useAuthStore } from "@/store/authStore";
 import { useProductDetailQuery } from "./useProductDetailQuery";
+import { useCartStore } from "@/store/cartStore";
 
 export function useProductDetail(id) {
   const router = useRouter();
@@ -19,6 +20,8 @@ export function useProductDetail(id) {
   const [count, setCount] = useState(1);
   
   const { cartQuery } = useCartQuery(userId);
+
+  const { cartList } = useCartStore();
 
   // -------------------------
   // 1) 상품 데이터 가져오기
@@ -32,10 +35,10 @@ export function useProductDetail(id) {
     if (!product) return;
 
     try {
-      const stored = localStorage.getItem("loginInfo");
+      const stored = localStorage.getItem("auth-storage");
       if (!stored) return;
 
-      const { accessToken } = JSON.parse(stored);
+      const { accessToken } = JSON.parse(stored).state;
       const payload = parseJwt(accessToken);
 
       api.post("/view/log", {
@@ -79,6 +82,16 @@ export function useProductDetail(id) {
         title: "⚠ 로그인 필요",
         text: "로그인이 필요합니다.",
       }).then(() => router.push(`/login?from=${pathname}`));
+      return;
+    }
+
+    const cartItem = cartList?.filter(item => item.product.id === Number(id));
+    if(product.count < count + cartItem[0]?.qty) {
+      Swal.fire({
+      icon: "error",
+      title: "장바구니 등록 실패",
+      text: "선택하신 수량이 재고를 초과했습니다."
+      });
       return;
     }
 
