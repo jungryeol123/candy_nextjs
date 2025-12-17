@@ -16,9 +16,9 @@ export function useCoupon() {
 
   // 🔹 로그인한 사용자 토큰에서 userId 추출
   useEffect(() => {
-    const stored = localStorage.getItem("loginInfo");
+    const stored = localStorage.getItem("auth-storage");
     if (stored) {
-      const { accessToken } = JSON.parse(stored);
+      const { accessToken } = JSON.parse(stored).state;
       const payload = parseJwt(accessToken);
       setUserId(payload.id);
     }
@@ -37,8 +37,8 @@ export function useCoupon() {
   const { data: issuedCoupons = [] } = useQuery({
     queryKey: ["issuedCoupons", userId],
     queryFn: async () => {
-      const stored = localStorage.getItem("loginInfo");
-      const { accessToken } = JSON.parse(stored);
+      const stored = localStorage.getItem("auth-storage");
+      const { accessToken } = JSON.parse(stored).state;
       const res = await couponAPI.getIssuedCoupons(userId, accessToken);
       return Array.isArray(res.data) ? res.data : [];
     },
@@ -48,8 +48,8 @@ export function useCoupon() {
   // 🔹 쿠폰 발급 Mutation
   const issueMutation = useMutation({
     mutationFn: async (couponId) => {
-      const stored = localStorage.getItem("loginInfo");
-      const { accessToken } = JSON.parse(stored);
+      const stored = localStorage.getItem("auth-storage");
+      const { accessToken } = JSON.parse(stored).state;
       return await couponAPI.issueCoupon(couponId, userId, accessToken);
     },
     onSuccess: (res, couponId) => {

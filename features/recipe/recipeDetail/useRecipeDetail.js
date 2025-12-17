@@ -50,8 +50,6 @@ export function useRecipeDetail(id) {
 
   // 자동 추천 상품
   useEffect(() => {
-    console.log(recipe);
-    console.log(productList);
     if (!recipe || !productList.length) return;
 
     const keywords = recipe.ingredients
