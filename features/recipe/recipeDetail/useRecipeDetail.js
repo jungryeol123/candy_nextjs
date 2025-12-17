@@ -4,12 +4,14 @@ import { useEffect, useMemo, useState } from "react";
 import Swal from "sweetalert2";
 // import { useSelector } from "react-redux";
 import { getRecipeDetailAPI, postRecipeReviewAPI } from "@/shared/utils/recipeAPI";
+import { useProductList } from "@/features/product/hooks/useProductList";
+
 
 export function useRecipeDetail(id) {
   const [recipe, setRecipe] = useState(null);
   const [reviews, setReviews] = useState([]);
-  // const productList = useSelector((state) => state.product.productList);
-  const productList = [];
+  const { data: productList } = useProductList();
+
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   // 페이지네이션
@@ -48,6 +50,8 @@ export function useRecipeDetail(id) {
 
   // 자동 추천 상품
   useEffect(() => {
+    console.log(recipe);
+    console.log(productList);
     if (!recipe || !productList.length) return;
 
     const keywords = recipe.ingredients

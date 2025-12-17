@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "next/link";
+import Link from "next/link";
 
 export function RelatedProductList({ relatedProducts }) {
-  if (!relatedProducts.length) return null;
+  if (!relatedProducts?.length) return null;
 
   return (
     <>
       <h2 className="section-title">레시피에 필요한 상품</h2>
 
       <div className="related-product-list">
-        {relatedProducts.map((p) => (
+        {relatedProducts?.map((p) => (
           <Link href={`/products/${p.id}`} key={p.id}>
             <div className="related-product-card">
               <img src={`/images/productImages/${p.imageUrl}`} alt={p.productName} />
