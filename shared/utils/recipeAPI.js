@@ -13,8 +13,8 @@ export const getRecipeDetailAPI = async (id) => {
 };
 
 export const postRecipeReviewAPI = async (recipeId, rating, content) => {
-  const stored = JSON.parse(localStorage.getItem("loginInfo"));
-  const accessToken = stored?.accessToken;
+  const stored = JSON.parse(localStorage.getItem("auth-storage"));
+  const accessToken = stored?.state.accessToken;
 
   const result = await api.post(
     `/recipe/${recipeId}/review`,
