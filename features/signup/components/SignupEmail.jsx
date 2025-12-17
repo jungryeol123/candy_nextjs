@@ -17,7 +17,7 @@ export function SignupEmail({ form, refs, handleChangeForm }) {
             ref={r?.emailNameRef}
             onChange={handleChangeForm}
           />
-          {form.emailDomain === "" ? (
+          {form.emailDomain === "" && (
             <input
               className="input-field domain-input"
               type="text"
@@ -26,16 +26,6 @@ export function SignupEmail({ form, refs, handleChangeForm }) {
               value={form.emailDomainInput}
               ref={r?.emailDomainInputRef}
               onChange={handleChangeForm}
-            />
-          ) : (
-            <input
-              className="input-field domain-input"
-              type="text"
-              name="emailDomain"
-              value={form.emailDomain}
-              ref={r?.emailDomainRef}
-              onChange={handleChangeForm}
-              readOnly
             />
           )}
           <select
