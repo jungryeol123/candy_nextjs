@@ -4,7 +4,6 @@ import { api } from "shared/lib/axios.js";
 
 export const getRecipeListAPI = async (subId) => {
   const result = await api.get(`/recipe/list?subId=${subId}`);
-  console.log(result);
   return result.data;
 };
 export const getRecipeDetailAPI = async (id) => {
