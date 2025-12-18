@@ -4,6 +4,12 @@ import { getHomeImages } from "@/features/home/server/homeImages";
 import ProductListServer from "@/shared/ui/productList/ProductListServer";
 
 
+
+export const metadata = {
+  title: "Candy Market | 할인·특가 쇼핑몰",
+  description: "원딜핫딜, 멤버특가 등 실시간 인기 상품을 가장 빠르게 만나보세요.",
+};
+
   export default async function Page() {
     const { bannerAds, inlineAds } = await getAdvertiseList();
       const images = await getHomeImages();

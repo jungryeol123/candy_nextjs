@@ -3,6 +3,7 @@ import { useProductList } from "@/features/product/hooks/useProductList";
 import { useCategoryList } from "@/features/category/hooks/useCategoryList";
 
 export function useSearchResult({ mode, keyword, cateId }) {
+
     // 🔹 React Query 로 상품 목록 가져오기
     const { data: productList = [], isLoading, isError } = useProductList();
     const { data: categoryList } = useCategoryList();

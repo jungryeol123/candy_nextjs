@@ -10,9 +10,13 @@ import { CartInitializer } from "@/features/CartInitializer/CartInitializer";
 
 
 export const metadata = {
-  title: "Candy Market",
+  title: {
+    default: "Candy Market",
+    template: "%s | Candy Market",
+  },
   description: "Next.js Shopping Mall",
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">

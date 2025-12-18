@@ -25,6 +25,10 @@ export default function Home({
 
   return (
     <>
+      <h1 className="sr-only">
+        Candy Market 할인·특가 쇼핑몰
+      </h1>
+      
       <RightAdBanner ads={bannerAds} />
 
       {showPopup && <Popup onClose={handleClosePopup} />}
