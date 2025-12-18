@@ -50,19 +50,21 @@ export function useRecipeDetail(id) {
 
   // 자동 추천 상품
   useEffect(() => {
-    if (!recipe || !productList.length) return;
+  if (!recipe) return;
+  if (!Array.isArray(productList) || productList.length === 0) return;
+  if (!Array.isArray(recipe.ingredients)) return;
 
-    const keywords = recipe.ingredients
-      .map((ing) => ing.split(/\s+/)[0])
-      .map((w) => w.replace(/[^가-힣a-zA-Z0-9]/g, ""))
-      .filter((w) => w.length > 1);
+  const keywords = recipe.ingredients
+    .map((ing) => ing.split(/\s+/)[0])
+    .map((w) => w.replace(/[^가-힣a-zA-Z0-9]/g, ""))
+    .filter((w) => w.length > 1);
 
-    const matches = productList.filter((p) =>
-      keywords.some((kw) => p.productName.includes(kw))
-    );
+  const matches = productList.filter((p) =>
+    keywords.some((kw) => p.productName.includes(kw))
+  );
 
-    setRelatedProducts(matches);
-  }, [recipe, productList]);
+  setRelatedProducts(matches);
+}, [recipe, productList]);
 
   // 후기 등록
   const submitReview = async () => {

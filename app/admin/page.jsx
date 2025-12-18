@@ -1,3 +1,3 @@
 export default function AdminHomePage() {
-  return <h1></h1>;
+  return <div>관리자 홈</div>;;
 }

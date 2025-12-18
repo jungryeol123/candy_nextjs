@@ -1,3 +1,4 @@
+// features/recipe/recipePage/hooks/useRecipeList.ts
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,7 +8,10 @@ export function useRecipeList(selectedSub) {
   const [recipeList, setRecipeList] = useState([]);
 
   useEffect(() => {
-    if (!selectedSub) return;
+    if (!selectedSub) {
+      setRecipeList([]);
+      return;
+    }
 
     const fetch = async () => {
       const result = await getRecipeListAPI(selectedSub);

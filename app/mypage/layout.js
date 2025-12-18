@@ -3,20 +3,14 @@ import './MyPage.css'
 import './AdminLayout.scss'
 import Link from "next/link";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function RootLayout({children}) {
-//   const [userId, setUserId] = useState(null);
-  
-  /** 🔹 로그인 ID 읽기 */
-//   useEffect(() => {
-//       const stored = localStorage.getItem("loginInfo");
-//       if (stored) {
-//         const { accessToken } = JSON.parse(stored);
-//         const payload = parseJwt(accessToken);
-  
-//         setUserId(payload.id); // ✅ 토큰 안의 id를 그대로 사용
-//       }
-  
-//     }, []);
 
     return (
         <div className="admin-container">
@@ -33,8 +27,6 @@ export default function RootLayout({children}) {
 
             <main className="admin-content">
                 {children}
-                {/* <Outlet /> */}
-                {/* <UpdateUserDetail/> */}
             </main>
         </div>
     );

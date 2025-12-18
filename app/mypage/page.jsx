@@ -1,6 +1,6 @@
-export default function MyPage() {
+    export default function MyPage() {
 
-    return (
-        <></>
-    );
-}
+        return (
+            <></>
+        );
+    }
