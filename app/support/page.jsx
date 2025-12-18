@@ -1,8 +1,14 @@
-"use client";
-
 import { FaPhoneAlt, FaEnvelope, FaQuestionCircle } from "react-icons/fa";
 import "./CustomerService.scss";
 import { CustomerCard } from "@/features/support/CustomerCard";
+
+export async function generateMetadata() {
+  return {
+    title: "고객센터 | Candy",
+    description: "전화, 이메일, FAQ를 통해 고객 지원을 제공합니다.",
+  };
+}
+
 
 export default function CustomerServicePage() {
   return (

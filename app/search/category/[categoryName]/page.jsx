@@ -35,7 +35,7 @@
 // }
 import SearchResult from "@/features/searchResult/components/SearchResult";
 
-export async function generateMetadata({ params, searchParams }) {
+export async function generateMetadata({ params }) {
   const { categoryName } = await params;
   const name = decodeURIComponent(categoryName);
 
