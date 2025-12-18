@@ -1,7 +1,7 @@
 [
   {
     "title": "매콤한 돼지고기 김치찌개",
-    "imageUrl": "/images/recipe/kimchi_stew.jpg",
+    "imageUrl": "kimchi_stew.jpg",
     "cookTime": 40,
     "summary": "돼지고기와 신김치로 깊고 매운맛을 낸 김치찌개입니다.",
     "rating": 4.8,
@@ -28,7 +28,7 @@
   },
   {
     "title": "부드러운 소고기 미역국",
-    "imageUrl": "/images/recipe/beef_miyeok.jpg",
+    "imageUrl": "beef_miyeok.jpg",
     "cookTime": 35,
     "summary": "담백하고 깊은 맛의 소고기 미역국입니다.",
     "rating": 4.6,
@@ -53,7 +53,7 @@
   },
   {
     "title": "토마토 계란볶음",
-    "imageUrl": "/images/recipe/tomato_egg.jpg",
+    "imageUrl": "tomato_egg.jpg",
     "cookTime": 10,
     "summary": "촉촉하고 부드러운 중국식 토마토 계란볶음입니다.",
     "rating": 4.9,
@@ -78,7 +78,7 @@
   },
   {
     "title": "매콤 떡볶이",
-    "imageUrl": "/images/recipe/tteokbokki.jpg",
+    "imageUrl": "tteokbokki.jpg",
     "cookTime": 20,
     "summary": "분식집 스타일의 매콤달콤 떡볶이입니다.",
     "rating": 4.7,
@@ -104,7 +104,7 @@
   },
   {
     "title": "해물 파전",
-    "imageUrl": "/images/recipe/seafood_pajeon.jpg",
+    "imageUrl": "seafood_pajeon.jpg",
     "cookTime": 25,
     "summary": "겉은 바삭하고 속은 촉촉한 해물파전입니다.",
     "rating": 4.8,

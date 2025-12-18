@@ -12,7 +12,7 @@ export function RelatedProductList({ relatedProducts }) {
         {relatedProducts?.map((p) => (
           <Link href={`/products/${p.id}`} key={p.id}>
             <div className="related-product-card">
-              <img src={`/images/productImages/${p.imageUrl}`} alt={p.productName} />
+              <img src={`/data/productImages/${p.imageUrl}`} alt={p.productName} />
               <div className="product-name">{p.productName}</div>
               <div className="product-price">{p.price.toLocaleString()}원</div>
             </div>
