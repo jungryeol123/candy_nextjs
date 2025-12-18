@@ -30,11 +30,15 @@ export function RightAdBanner({ ads = [], interval = 3000, random = false }) {
 
   return (
     <div className="right-ad-banner">
-      <a href={ad.advLink} target="_blank" rel="noreferrer">
+      <a
+        href={ad.advLink}
+        target="_blank"
+        rel="noopener noreferrer nofollow sponsored"
+      >
         <img
           className="banner-img"
           src={`${IMAGE_BASE_URL}${ad.advImageBanner}`}
-          alt={ad.advName ?? "advertise-banner"}
+          alt={ad.advName ? `${ad.advName} 광고 배너` : "광고 배너"}
         />
       </a>
     </div>
