@@ -14,7 +14,7 @@ export function RecipeCard({ recipe }) {
       onClick={() => router.push(`/recipe/${recipe.id}`)}
     >
       <img
-        src={recipe.imageUrl}
+        src={`/data/recipe/${recipe.imageUrl}`}
         alt={recipe.title}
         className="recipe-img"
       />
