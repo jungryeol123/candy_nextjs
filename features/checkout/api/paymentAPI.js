@@ -78,7 +78,7 @@ export const getNaverPayment = async (receiver, paymentInfo, cartList, couponId)
     const oPay = window.Naver.Pay.create({
       mode: "development",
       clientId: "HN3GGCMDdTgGUfl0kFCo",
-      chainId: "MG5ZbE9ZaXRrZE4",
+      chainId: "bUlQU21hZk5pWkZ",
     });
 
     // 4️⃣ 결제창 호출
