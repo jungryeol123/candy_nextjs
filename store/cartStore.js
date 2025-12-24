@@ -65,11 +65,11 @@ export const useCartStore = create((set, get) => ({
       0
     );
 
-    const dcTotal = list.reduce(
-      (acc, item) =>
-        acc + item.qty * (item.product.price * item.product.dc * 0.01),
-      0
-    );
+    const dcTotal = list.reduce((acc, item) => {
+      const unitDiscount = Math.floor(item.product.price * item.product.dc / 100); // 1개당 할인금액 (절사)
+
+      return acc + unitDiscount * item.qty;
+    }, 0);
 
     set({
       cartCount: totalList.length,
